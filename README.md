@@ -1,8 +1,11 @@
-# chrome-extension-api
-Chrome extension build attempt; Fetches data from an api and shows textual information
+# chrome-extension-api call to n8n 
 
-Built from [this medium article](https://www.freecodecamp.org/news/building-chrome-extension/#:~:text=found%20on%20GitHub.-,How%20to%20Create%20a%20Chrome%20Extension,%2C%20CSS%2C%20and%20JavaScript%20files.&text=Now%2C%20let's%20add%20a%20link,extra%20CSS%20in%20this%20example.) 
+#### works
+Chrome extension sends data to a webhook on click of icon;
+
+Captures data from [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document) and sends it to a webhook.
+
+Can implement authentication and cors later
 
 
-
-
+verify requests sent to [webhook](https://webhook.site/49792acf-583f-437d-89be-d227d341aba3) at https://webhook.site/#!/49792acf-583f-437d-89be-d227d341aba3/7d4917e0-536f-4b95-9ef0-ee8e0841ae8c/1

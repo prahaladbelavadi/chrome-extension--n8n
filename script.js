@@ -1,9 +1,29 @@
-async function fetchData() {
-    const res=await fetch ("https://api.coronavirus.data.gov.uk/v1/data");
-    const record=await res.json();
-    document.getElementById("date").innerHTML=record.data[0].date;
-    document.getElementById("areaName").innerHTML=record.data[0].areaName;
-    document.getElementById("latestBy").innerHTML=record.data[0].latestBy;
-    document.getElementById("deathNew").innerHTML=record.data[0].deathNew;
+const perform = async () => {
+    const res = await fetch("https://webhook.site/49792acf-583f-437d-89be-d227d341aba3", {
+        method: "POST",
+        body: document.documentURI,
+        mode: "no-cors"
+    });
+    if (res) {
+        document.body.style.backgroundColor = 'green';
+        setTimeout(() => {
+            const color = document.body.style.backgroundColor
+            document.body.style.backgroundColor = color;
+        }, 1000 * 5);
+    } else {
+        document.body.style.backgroundColor = 'red';
+        setTimeout(() => {
+            const color = document.body.style.backgroundColor
+            document.body.style.backgroundColor = color;
+        }, 1000 * 5);
+
+    }
 }
-fetchData();
+
+chrome.action.onClicked.addListener((tab) => {
+    chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: perform
+    });
+});
+
